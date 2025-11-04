@@ -1,0 +1,36 @@
+.hotel-details {
+  margin-bottom: 2rem;
+}
+
+.hotel-info {
+  padding: 0 1rem;
+}
+
+.hotel-name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.hotel-address {
+  margin-bottom: 1rem;
+}
+
+.hotel-address p {
+  margin: 0;
+  color: #666;
+  font-size: 1rem;
+}
+
+.hotel-description {
+  margin-top: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.hotel-description p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+

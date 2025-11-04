@@ -1,0 +1,19 @@
+.hotel-page {
+  width: 100%;
+}
+
+.hotel-page-loading,
+.hotel-page-error {
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.hotel-page-loading {
+  color: #666;
+}
+
+.hotel-page-error {
+  color: #d32f2f;
+}
+
