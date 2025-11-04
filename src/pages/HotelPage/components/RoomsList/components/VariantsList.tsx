@@ -1,4 +1,4 @@
-import { useState, memo, useMemo, useCallback } from 'react';
+import { useState, memo } from 'react';
 import { Variant as VariantType } from '../../../../../api/hotel/types';
 import { VariantsListItem } from './VariantsListItem';
 import './VariantsList.css';
