@@ -4,20 +4,11 @@ A responsive React application for displaying hotel rooms with infinite scrollin
 
 ## Table of Contents
 
-- [Technologies](#technologies)
 - [Project Setup](#project-setup)
 - [Architecture & Design Decisions](#architecture--design-decisions)
 - [Performance Optimizations](#performance-optimizations)
 - [Assumptions & Limitations](#assumptions--limitations)
 - [Project Structure](#project-structure)
-
-## Technologies
-
-- **React 18.3.1** - UI library with hooks and modern patterns
-- **TypeScript 5.4.5** - Type safety and better developer experience
-- **Vite 5.4.2** - Fast build tool and development server
-- **Swiper 12.0.3** - Touch-enabled image carousel component
-- **React Context API** - State management with useReducer pattern
 
 ## Project Setup
 
