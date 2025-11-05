@@ -21,7 +21,7 @@ function VariantsListComponent({ variants }: VariantsListProps) {
           const isNewlyVisible = showAll && index >= 2;
           return (
             <li 
-              key={index} 
+              key={`variant-${index}`} // for production it would be good to use unique variant ID
               className={`variant-item ${isNewlyVisible ? 'variant-item-enter' : ''}`}
             >
               <VariantsListItem variant={variant} />

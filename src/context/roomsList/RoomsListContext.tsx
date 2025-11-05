@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from 'react';
+import { createContext, useContext, useReducer, useRef, useEffect } from 'react';
 import { ContextDevTool } from 'react-context-devtool';
 import { roomsListReducer, initialRoomsListState } from './roomsListReducer';
 import { RoomsListActionTypes } from './roomsListActionTypes';
@@ -13,8 +13,21 @@ const RoomsListContext = createContext<{
 
 export function RoomsListProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(roomsListReducer, initialRoomsListState);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   const loadNextPage = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
     dispatch({
       type: RoomsListActionTypes.SET_LOADING,
       payload: true,
@@ -22,10 +35,11 @@ export function RoomsListProvider({ children }: { children: React.ReactNode }) {
 
     // Using setTimeout to simulate network delay and showing loading indicator,
     // 2 seconds should be enough for demo purposes here
-    setTimeout(() => {
+    timeoutRef.current = setTimeout(() => {
       dispatch({
         type: RoomsListActionTypes.LOAD_NEXT_PAGE,
       });
+      timeoutRef.current = null;
     }, 2000);
   };
 

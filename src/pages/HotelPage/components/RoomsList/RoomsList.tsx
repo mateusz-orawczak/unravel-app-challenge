@@ -8,10 +8,6 @@ export function RoomsList() {
   const { roomsList, allRooms, isLoading, loadNextPage } = useRoomsList();
   const lastCardRef = useRef<HTMLDivElement>(null);
 
-  if (!roomsList || roomsList.length === 0) {
-    return <div className="no-rooms">No rooms available</div>;
-  }
-
   const remainingCount = allRooms.length - roomsList.length;
   const hasMoreRooms = remainingCount > 0;
 
@@ -41,6 +37,10 @@ export function RoomsList() {
       observer.disconnect();
     };
   }, [roomsList.length, hasMoreRooms, isLoading, loadNextPage]);
+
+  if (!roomsList || roomsList.length === 0) {
+    return <div className="no-rooms">No rooms available</div>;
+  }
 
   return (
     <div className="rooms-list">

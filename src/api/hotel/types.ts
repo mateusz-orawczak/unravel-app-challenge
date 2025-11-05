@@ -7,9 +7,26 @@ export type FetchHotelResponse = {
   }>;
 };
 
-type HotelDetails = {
+export type HotelDetails = {
     name: string;
     display_name: string;
+    images: HotelImage[];
+    description: string;
+    address: {
+        city: string;
+        country: string;
+    };
+};
+
+export type HotelImage = {
+    twoX?: {
+        landscape?: string;
+        square?: string;
+    };
+    threeX?: {
+        landscape?: string;
+        square?: string;
+    };
 };
 
 export type Room = {

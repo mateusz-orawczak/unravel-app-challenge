@@ -1,7 +1,8 @@
 import { HotelAction, HotelActionTypes } from './hotelActionTypes';
+import { HotelDetails } from '../../api/hotel/types';
 
 export interface HotelState {
-  hotel: any | null
+  hotel: HotelDetails | null
 }
 
 export const initialHotelState: HotelState = {

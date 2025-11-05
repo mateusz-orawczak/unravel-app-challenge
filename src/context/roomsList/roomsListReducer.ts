@@ -1,10 +1,11 @@
 import { RoomsListAction, RoomsListActionTypes } from './roomsListActionTypes';
+import { Room } from '../../api/hotel/types';
 
 const PAGE_SIZE = 10;
 
 export interface RoomsListState {
-  allRooms: any[]
-  roomsList: any[]
+  allRooms: Room[]
+  roomsList: Room[]
   isLoading: boolean
 }
 

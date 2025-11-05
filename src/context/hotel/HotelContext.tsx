@@ -1,10 +1,12 @@
 import { createContext, useContext, useReducer } from 'react';
 import { ContextDevTool } from 'react-context-devtool';
 import { hotelReducer, initialHotelState } from './hotelReducer';
+import { HotelDetails } from '../../api/hotel/types';
+import { HotelAction } from './hotelActionTypes';
 
 const HotelContext = createContext<{
-  hotel: any | null
-  dispatch: React.Dispatch<any>
+  hotel: HotelDetails | null
+  dispatch: React.Dispatch<HotelAction>
 } | null>(null);
 
 export function HotelProvider({ children }: { children: React.ReactNode }) {
